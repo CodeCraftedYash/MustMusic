@@ -1,0 +1,211 @@
+*{
+    
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    
+}
+:root{
+ --bg-color:#232323;
+ --bg-gradient: ;
+ --heading-color:#ffffff;
+ --text-color:white;
+ --box-shadow: ;
+ --gradient:linear-gradient(to bottom, rgb(132, 132, 132) , rgb(79, 79, 79),rgb(42, 42, 42));
+ --text-shadow: 3px 3px 2px rgb(224, 224, 224), 6px 6px 6px rgb(66, 66, 66);
+}
+body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+#loadingScreen{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    z-index: 999;
+    display: block;
+    transition: opacity .5s ease-in;
+}
+
+#page1{
+    position: relative;
+    background-color:var(--bg-color);
+    background-image:var(--bg-gradient) ;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-flow: column wrap;
+}
+#heading{
+   
+    font-size: 5rem;
+    letter-spacing: 4px;
+    padding-right: 2rem;
+    color: var(--heading-color);
+    text-shadow: var(--text-shadow);
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+    typing 4s ,
+    cursor .4s step-end infinite alternate;
+   
+}
+@keyframes cursor {
+    50%{
+        border-color: transparent;
+    }
+}
+@keyframes typing {
+    from{width: 0;}
+}
+
+#music{
+    margin-top: 3rem;
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    gap: 2rem;
+  
+}
+#controls{
+width: 100%;
+height:100%;
+display: flex;
+background-color: var(--heading-color);
+background-image:var(--gradient);
+flex-flow: row wrap;
+border: 5px solid black;
+border-radius: 50px;
+padding: 1rem 2rem;
+
+justify-content: space-between;
+}
+
+#progress{
+    width: 100%;
+    
+    cursor: pointer;  
+}
+#progress::-webkit-slider-runnable-track{
+    background-color: rgb(10, 10, 10);
+    background-image: linear-gradient(to right, white 0%,transparent 1%);
+    border-radius: 50px;
+    border: 2px solid rgb(147, 147, 147);
+
+}
+
+.btn{
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    width:4rem;
+    height: 3rem;
+    border-radius: .5rem;
+    background-color: rgb(255, 255, 255);
+    
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+}
+.btn:hover{
+    background-color: rgb(175, 230, 149);
+    box-shadow: .5px .5px 3px 3px rgb(0, 0, 0);
+    transition: box-shadow .2s ease-in-out;
+}
+.btn:not(:hover){
+    box-shadow: 0 0 black;
+    transition:  box-shadow .2s linear;
+}
+#loop-btn{
+    background-color: rgb(255, 255, 255);
+}
+#musicList{
+ background-color: rgba(12, 75, 124, 0.334);
+ width: 30vw;
+ height: 100vh;
+ position: absolute;
+ right:0;
+ pointer-events: none;
+ opacity: 0;
+ transition: opacity .3s ease-in-out;
+ z-index: 5;
+}
+#listContainer{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 1rem 0;
+   
+}
+#listContainer li{
+ border: 4px solid black;
+ padding: 1rem;
+ font-size: 1.3rem;
+ color: rgb(249, 157, 0);
+ list-style: none;
+ margin: .07rem 0;
+ overflow: hidden;
+
+}
+#listContainer li h4:hover{
+   
+    animation: move 5s linear infinite forwards;
+}
+@keyframes move {
+    0%{
+        transform: translateX(110%);
+    }
+ 
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+#listContainer li:hover{
+    color: #ffffff;
+    background-color: rgba(254, 119, 0, 0.334);
+}
+
+footer{
+    z-index: 6;
+    position: absolute;
+    bottom: 0;
+    padding: 1rem 0;
+    background-color: aliceblue;
+    background-image:var(--gradient);
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap ;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    justify-content: space-between;
+  
+}
+footer p{
+    color:white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 2.5rem;
+    gap: 3rem;
+}
+footer p a {
+ text-decoration: none;
+ color: white;
+ transition: color .5s ease-in;
+}
+footer p a:hover{
+    color: #7cb63b;
+    transition: color .5s ease-out;
+}
